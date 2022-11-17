@@ -11,8 +11,7 @@ public class User {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
-    @Column(name = "name") // định nghĩa naMe thành name có thể bỏ
-                            // nếu k có naMe -> na_me
+    @Column(name = "name") // định nghĩa naMe thành name có thể bỏ // nếu k có naMe -> na_me
     private String name;
 
     @Column(name = "email")
