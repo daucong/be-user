@@ -3,6 +3,7 @@ package com.example.beuser.controller;
 import com.example.beuser.entity.User;
 import com.example.beuser.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.core.env.Environment;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
@@ -17,8 +18,13 @@ public class UserController {
     @Autowired
     private UserService userService;
 
+    @Autowired
+    Environment environment;
+
     @GetMapping("")
     public List<User> list() {
+        String port = environment.getProperty("local.server.port");
+        System.out.println(port);
         return userService.getAllUser();
     }
 
@@ -36,4 +42,6 @@ public class UserController {
     public void DeleteUser(@PathVariable("id") Integer id) {
         userService.deleteUser(id);
     }
+
+
 }

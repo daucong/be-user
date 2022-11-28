@@ -14,6 +14,12 @@ public class User {
     @Column(name = "name") // định nghĩa naMe thành name có thể bỏ // nếu k có naMe -> na_me
     private String name;
 
+    @Column(name = "username") // định nghĩa naMe thành name có thể bỏ // nếu k có naMe -> na_me
+    private String username;
+
+    @Column(name = "password") // định nghĩa naMe thành name có thể bỏ // nếu k có naMe -> na_me
+    private String password;
+
     @Column(name = "email")
     private String email;
 
